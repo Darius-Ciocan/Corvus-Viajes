@@ -23,5 +23,5 @@ VITE_API_URL=https://tu-api.com/api/v1
 
 ## URLs
 
-- Frontend: [Corvus Viajes](https://ahora-vamos-a-hacer-un-trabajo.vercel.app)
-- API: [Corvus Viajes](https://ahora-vamos-a-hacer-un-trabajo.vercel.app/api/v1/health)
+- Frontend: [Corvus Viajes](https://corvus-viajes.vercel.app)
+- API: [Corvus Viajes](https://corvus-viajes.vercel.app/api/v1/health)
