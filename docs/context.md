@@ -4,9 +4,13 @@
 
 Se creo `BookingContext` para compartir el destino seleccionado y la lista de favoritos. Estos datos pueden ser usados por tarjetas, formulario y futuras paginas sin pasar props por muchos niveles.
 
+Tambien se creo `ThemeContext` para compartir el modo visual claro/oscuro. El provider guarda la preferencia en `localStorage` y aplica la clase `dark` al documento.
+
 ## Provider
 
 `BookingProvider` envuelve la aplicacion en `main.tsx`. Internamente usa `useState`, `useCallback` y `useMemo`.
+
+`ThemeProvider` tambien envuelve la aplicacion para que el boton de tema este disponible desde el layout principal.
 
 ## Consumo
 

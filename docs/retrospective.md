@@ -21,3 +21,5 @@ La IA se uso como apoyo para estructurar el proyecto, redactar documentacion, pr
 ## Mejoras futuras
 
 Anadiria base de datos real, login, panel de administracion, tests automaticos y documentacion OpenAPI. Tambien desplegaria frontend y API en produccion con variables de entorno configuradas.
+
+Como mejora visual posterior se anadieron particulas, modo claro/oscuro y animaciones de interaccion. Esto mejora la sensacion de producto final sin cambiar la arquitectura de datos.

@@ -21,9 +21,9 @@ export default function PlannerPage() {
   return (
     <section className="page-shell grid gap-8 py-12 lg:grid-cols-[1.1fr_0.9fr]">
       <div>
-        <p className="text-sm font-black uppercase text-emerald-800">Formulario controlado</p>
-        <h1 className="text-4xl font-black text-stone-950">Planificador de reservas</h1>
-        <p className="mt-3 text-stone-600">
+        <p className="text-sm font-black uppercase text-emerald-800 dark:text-emerald-300">Formulario controlado</p>
+        <h1 className="text-4xl font-black text-stone-950 dark:text-white">Planificador de reservas</h1>
+        <p className="mt-3 text-stone-600 dark:text-emerald-50/70">
           La solicitud se valida en frontend y backend. Los datos de reserva viven en la API.
         </p>
         <div className="mt-6">
@@ -34,8 +34,8 @@ export default function PlannerPage() {
         </div>
       </div>
       <aside>
-        <p className="text-sm font-black uppercase text-emerald-800">Estado global y API</p>
-        <h2 className="text-2xl font-black text-stone-950">Solicitudes recientes</h2>
+        <p className="text-sm font-black uppercase text-emerald-800 dark:text-emerald-300">Estado global y API</p>
+        <h2 className="text-2xl font-black text-stone-950 dark:text-white">Solicitudes recientes</h2>
         <div className="mt-6">
           <ReservationList
             reservations={reservationsState.reservations}

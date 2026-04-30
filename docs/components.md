@@ -20,6 +20,10 @@ Recibe reservas y una funcion para cancelar. Renderiza el estado de cada solicit
 
 Componentes reutilizables para representar carga y error. Se usan en paginas que dependen de la API.
 
+## ParticleBackground
+
+Renderiza particulas decorativas en segundo plano. No bloquea la interaccion porque usa `pointer-events: none` y respeta `prefers-reduced-motion` desde CSS.
+
 ## Composicion
 
 Las paginas no contienen toda la logica visual. Componen componentes pequenos y pasan datos por props. Esto hace que las piezas sean reutilizables y mas faciles de probar.

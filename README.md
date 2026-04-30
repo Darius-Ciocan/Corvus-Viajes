@@ -10,6 +10,8 @@ Aplicacion fullstack para una empresa ficticia de viajes. El frontend esta const
 - Validacion en frontend y backend.
 - Listado de reservas con opcion de cancelacion.
 - Context API para destino seleccionado y favoritos.
+- Boton claro/oscuro con preferencia persistente.
+- Fondo de particulas y animaciones de interaccion.
 - Hooks reutilizables para destinos, reservas y presupuesto.
 - Estados de red: loading, data y error.
 - Lazy loading de paginas con `React.lazy`.

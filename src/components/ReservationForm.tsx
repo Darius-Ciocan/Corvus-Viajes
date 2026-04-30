@@ -58,11 +58,11 @@ export function ReservationForm({ destinations, onSubmit }: ReservationFormProps
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4 rounded-md border border-stone-200 bg-white p-5">
+    <form onSubmit={handleSubmit} className="reveal-up grid gap-4 rounded-md border border-stone-200 bg-white p-5 shadow-sm dark:border-emerald-300/15 dark:bg-white/10 dark:text-emerald-50">
       <label className="grid gap-2 text-sm font-bold">
         Destino
         <select
-          className="rounded-md border border-stone-300 bg-white px-3 py-3 font-normal"
+          className="rounded-md border border-stone-300 bg-white px-3 py-3 font-normal transition focus:-translate-y-0.5 focus:border-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-800/10 dark:border-emerald-300/20 dark:bg-[#10221d] dark:text-white"
           value={selectedDestinationId}
           onChange={(event) => setSelectedDestinationId(event.target.value)}
         >
@@ -79,7 +79,7 @@ export function ReservationForm({ destinations, onSubmit }: ReservationFormProps
         <label className="grid gap-2 text-sm font-bold">
           Nombre completo
           <input
-            className="rounded-md border border-stone-300 px-3 py-3 font-normal"
+            className="rounded-md border border-stone-300 px-3 py-3 font-normal transition focus:-translate-y-0.5 focus:border-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-800/10 dark:border-emerald-300/20 dark:bg-[#10221d] dark:text-white dark:placeholder:text-emerald-50/45"
             value={customerName}
             onChange={(event) => setCustomerName(event.target.value)}
             placeholder="Laura Martin"
@@ -88,7 +88,7 @@ export function ReservationForm({ destinations, onSubmit }: ReservationFormProps
         <label className="grid gap-2 text-sm font-bold">
           Email
           <input
-            className="rounded-md border border-stone-300 px-3 py-3 font-normal"
+            className="rounded-md border border-stone-300 px-3 py-3 font-normal transition focus:-translate-y-0.5 focus:border-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-800/10 dark:border-emerald-300/20 dark:bg-[#10221d] dark:text-white dark:placeholder:text-emerald-50/45"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="correo@ejemplo.com"
@@ -103,7 +103,7 @@ export function ReservationForm({ destinations, onSubmit }: ReservationFormProps
             type="number"
             min="1"
             max="12"
-            className="rounded-md border border-stone-300 px-3 py-3 font-normal"
+            className="rounded-md border border-stone-300 px-3 py-3 font-normal transition focus:-translate-y-0.5 focus:border-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-800/10 dark:border-emerald-300/20 dark:bg-[#10221d] dark:text-white"
             value={travelers}
             onChange={(event) => setTravelers(Number(event.target.value))}
           />
@@ -112,7 +112,7 @@ export function ReservationForm({ destinations, onSubmit }: ReservationFormProps
           Fecha de salida
           <input
             type="date"
-            className="rounded-md border border-stone-300 px-3 py-3 font-normal"
+            className="rounded-md border border-stone-300 px-3 py-3 font-normal transition focus:-translate-y-0.5 focus:border-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-800/10 dark:border-emerald-300/20 dark:bg-[#10221d] dark:text-white"
             value={startDate}
             onChange={(event) => setStartDate(event.target.value)}
           />
@@ -122,24 +122,24 @@ export function ReservationForm({ destinations, onSubmit }: ReservationFormProps
       <label className="grid gap-2 text-sm font-bold">
         Preferencias
         <textarea
-          className="min-h-28 rounded-md border border-stone-300 px-3 py-3 font-normal"
+          className="min-h-28 rounded-md border border-stone-300 px-3 py-3 font-normal transition focus:-translate-y-0.5 focus:border-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-800/10 dark:border-emerald-300/20 dark:bg-[#10221d] dark:text-white dark:placeholder:text-emerald-50/45"
           value={notes}
           onChange={(event) => setNotes(event.target.value)}
           placeholder="Ritmo del viaje, presupuesto, tipo de hotel..."
         />
       </label>
 
-      <div className="rounded-md bg-emerald-50 p-4 text-sm text-emerald-950">
+      <div className="rounded-md bg-emerald-50 p-4 text-sm text-emerald-950 dark:bg-emerald-300/10 dark:text-emerald-50">
         <p className="font-black">Presupuesto estimado</p>
         <p className="mt-1">Base: {formatCurrency(budget.base)} | Servicio: {formatCurrency(budget.serviceFee)}</p>
         <p className="mt-1 text-lg font-black">Total: {formatCurrency(budget.total)}</p>
       </div>
 
-      {message && <p className="rounded-md bg-stone-100 p-3 text-sm font-semibold">{message}</p>}
+      {message && <p className="reveal-up rounded-md bg-stone-100 p-3 text-sm font-semibold dark:bg-white/10">{message}</p>}
 
       <button
         disabled={isSubmitting}
-        className="inline-flex items-center justify-center gap-2 rounded-md bg-emerald-900 px-5 py-3 font-black text-white disabled:cursor-not-allowed disabled:bg-stone-400"
+        className="pressable inline-flex items-center justify-center gap-2 rounded-md bg-emerald-900 px-5 py-3 font-black text-white disabled:cursor-not-allowed disabled:bg-stone-400 dark:bg-emerald-400 dark:text-emerald-950"
       >
         <Send size={18} aria-hidden="true" />
         {isSubmitting ? 'Enviando' : 'Solicitar reserva'}
