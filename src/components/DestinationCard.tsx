@@ -4,6 +4,9 @@ import { useBookingContext } from '../hooks/useBookingContext'
 import type { Destination } from '../types/travel'
 import { formatCurrency } from '../utils/format'
 
+const fallbackImageUrl =
+  'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80'
+
 interface DestinationCardProps {
   destination: Destination
 }
@@ -17,6 +20,9 @@ export function DestinationCard({ destination }: DestinationCardProps) {
       <img
         src={destination.imageUrl}
         alt={destination.name}
+        onError={(event) => {
+          event.currentTarget.src = fallbackImageUrl
+        }}
         className="h-52 w-full object-cover transition duration-500 hover:scale-[1.03]"
       />
       <div className="grid gap-4 p-5">

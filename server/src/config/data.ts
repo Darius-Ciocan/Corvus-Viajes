@@ -39,7 +39,7 @@ export const destinations: Destination[] = [
     description:
       'Itinerario de contrastes para viajeros que quieren combinar medinas, montana y una experiencia de desierto segura.',
     imageUrl:
-      'https://images.unsplash.com/photo-1539020140153-e8c237112e53?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1650709137023-399fe2326bd7?auto=format&fit=crop&w=1000&q=80',
     priceFrom: 880,
     durationDays: 6,
     tags: ['desierto', 'cultura', 'grupo pequeno'],
