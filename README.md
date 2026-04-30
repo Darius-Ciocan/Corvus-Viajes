@@ -38,8 +38,8 @@ El frontend se ejecuta en `http://localhost:5173` y la API en `http://localhost:
 ## Trello y despliegue
 
 - Tablero Trello: pendiente de crear manualmente y pegar aqui.
-- Frontend Vercel: https://ahora-vamos-a-hacer-un-trabajo.vercel.app
-- API Vercel: https://ahora-vamos-a-hacer-un-trabajo.vercel.app/api/v1/health
+- Frontend Vercel: [Corvus Viajes](https://ahora-vamos-a-hacer-un-trabajo.vercel.app)
+- API Vercel: [Corvus Viajes](https://ahora-vamos-a-hacer-un-trabajo.vercel.app/api/v1/health)
 
 ## Documentacion
 
