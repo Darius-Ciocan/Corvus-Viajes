@@ -11,9 +11,9 @@ export default function AboutPage() {
           descubrir destinos, calcular una estimacion y solicitar una reserva con seguimiento.
         </p>
         <p className="leading-8">
-          El proyecto esta dividido en frontend, cliente tipado de API y backend Express por capas.
-          La documentacion en la carpeta docs explica metodologia, arquitectura, componentes, hooks,
-          rutas, formularios, API, testing, despliegue y retrospectiva.
+          Somos una agencia moderna que combina asesoramiento cercano con herramientas digitales
+          para crear viajes personalizados, claros y faciles de reservar. Cada propuesta se adapta
+          al ritmo del viajero, al presupuesto y al tipo de experiencia que quiere vivir.
         </p>
       </div>
     </section>
