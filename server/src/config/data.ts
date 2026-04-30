@@ -1,4 +1,4 @@
-import type { Destination, Reservation } from '../types/travel'
+import type { Destination, Reservation } from '../types/travel.js'
 
 export const destinations: Destination[] = [
   {

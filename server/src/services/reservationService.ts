@@ -1,5 +1,5 @@
-import { destinations, reservations } from '../config/data'
-import type { Reservation, ReservationInput, ReservationStatus } from '../types/travel'
+import { destinations, reservations } from '../config/data.js'
+import type { Reservation, ReservationInput, ReservationStatus } from '../types/travel.js'
 
 function validateReservation(payload: ReservationInput) {
   if (!payload.destinationId || !destinations.some((item) => item.id === payload.destinationId)) {

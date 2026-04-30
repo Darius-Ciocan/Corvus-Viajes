@@ -1,4 +1,4 @@
-import { destinations } from '../config/data'
+import { destinations } from '../config/data.js'
 
 export const destinationService = {
   findAll() {

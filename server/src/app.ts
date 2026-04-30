@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express from 'express'
-import { destinationRouter } from './routes/destinationRoutes'
-import { reservationRouter } from './routes/reservationRoutes'
+import { destinationRouter } from './routes/destinationRoutes.js'
+import { reservationRouter } from './routes/reservationRoutes.js'
 
 export const app = express()
 

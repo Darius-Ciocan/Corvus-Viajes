@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express'
-import { reservationService } from '../services/reservationService'
-import type { ReservationInput, ReservationStatus } from '../types/travel'
+import { reservationService } from '../services/reservationService.js'
+import type { ReservationInput, ReservationStatus } from '../types/travel.js'
 
 const validStatuses: ReservationStatus[] = ['pending', 'confirmed', 'cancelled']
 

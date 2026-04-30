@@ -23,5 +23,5 @@ VITE_API_URL=https://tu-api.com/api/v1
 
 ## URLs
 
-- Frontend: pendiente.
-- API: pendiente.
+- Frontend: `https://ahora-vamos-a-hacer-un-trabajo.vercel.app`
+- API: `https://ahora-vamos-a-hacer-un-trabajo.vercel.app/api/v1/health`

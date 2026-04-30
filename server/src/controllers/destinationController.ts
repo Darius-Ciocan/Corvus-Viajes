@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express'
-import { destinationService } from '../services/destinationService'
+import { destinationService } from '../services/destinationService.js'
 
 export const destinationController = {
   list(_request: Request, response: Response) {
