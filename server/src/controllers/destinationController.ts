@@ -7,7 +7,8 @@ export const destinationController = {
   },
 
   detail(request: Request, response: Response) {
-    const destination = destinationService.findById(request.params.id)
+    const id = String(request.params.id)
+    const destination = destinationService.findById(id)
 
     if (!destination) {
       response.status(404).json({ message: 'Destino no encontrado.' })

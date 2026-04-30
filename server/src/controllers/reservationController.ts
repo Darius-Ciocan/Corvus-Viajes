@@ -26,7 +26,7 @@ export const reservationController = {
       return
     }
 
-    const reservation = reservationService.updateStatus(request.params.id, request.body.status)
+    const reservation = reservationService.updateStatus(String(request.params.id), request.body.status)
 
     if (!reservation) {
       response.status(404).json({ message: 'Reserva no encontrada.' })
@@ -37,7 +37,7 @@ export const reservationController = {
   },
 
   remove(request: Request<{ id: string }>, response: Response) {
-    const removed = reservationService.remove(request.params.id)
+    const removed = reservationService.remove(String(request.params.id))
 
     if (!removed) {
       response.status(404).json({ message: 'Reserva no encontrada.' })
