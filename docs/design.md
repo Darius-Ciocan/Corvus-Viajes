@@ -1,63 +1,75 @@
-# Arquitectura de la aplicacion
+# Arquitectura de la aplicación
+
+## Estructura general
+
+La aplicación está dividida en dos partes principales: frontend y backend. El frontend se encarga de la interfaz que ve el usuario, y el backend expone la API con los datos de destinos y reservas.
+
+He intentado que cada carpeta tenga una responsabilidad clara para que el proyecto sea más fácil de entender y mantener.
 
 ## Frontend
 
-El frontend esta organizado por responsabilidad:
+La estructura principal del frontend es:
 
 - `src/components/`: componentes reutilizables.
-- `src/pages/`: vistas conectadas a rutas.
-- `src/hooks/`: hooks reutilizables.
-- `src/context/`: estado global con Context API.
-- `src/api/`: cliente tipado de red.
-- `src/types/`: contratos TypeScript compartidos conceptualmente con la API.
+- `src/pages/`: páginas principales de la web.
+- `src/hooks/`: hooks personalizados.
+- `src/context/`: estados globales compartidos.
+- `src/api/`: cliente de API.
+- `src/types/`: tipos de TypeScript.
 - `src/utils/`: funciones auxiliares.
 
 ## Componentes principales
 
-- `AppShell`: layout general y navegacion.
-- `DestinationCard`: tarjeta reutilizable de destino.
-- `ReservationForm`: formulario controlado para crear reservas.
-- `ReservationList`: listado de solicitudes.
-- `LoadingState` y `ErrorState`: estados de red reutilizables.
+- `AppShell`: estructura general de la página, cabecera y navegación.
+- `DestinationCard`: tarjeta para mostrar un destino.
+- `ReservationForm`: formulario para solicitar una reserva.
+- `ReservationList`: listado de solicitudes de reserva.
+- `LoadingState`: estado visual de carga.
+- `ErrorState`: estado visual de error.
+- `ParticleBackground`: fondo decorativo con partículas.
 
-## Estado
+## Gestión del estado
 
-Se usa `useState` para estado local de formularios, busqueda y datos cargados. Se usa `useEffect` para cargar informacion de la API. Se usa `useMemo` para filtros y presupuesto estimado. Se usa `useCallback` para funciones reutilizadas por componentes hijos.
+Para estados locales uso `useState`, por ejemplo en formularios, búsquedas y mensajes. Para cargar datos de la API uso `useEffect`. También se usa `useMemo` para cálculos como el presupuesto estimado y `useCallback` para funciones que se pasan a otros componentes.
 
-Context API guarda el destino seleccionado y los favoritos, porque esos datos se consumen en varias zonas de la aplicacion.
+Para estados compartidos se usa Context API. Hay un contexto para reservas/favoritos y otro para el tema claro u oscuro.
 
-## Backend/API
+## Backend
 
-El backend usa Express y esta dividido en:
+El backend está hecho con Express y sigue una arquitectura por capas:
 
-- `routes/`: define rutas HTTP.
-- `controllers/`: traduce request/response y codigos HTTP.
-- `services/`: contiene reglas de negocio.
-- `config/`: datos iniciales en memoria.
-- `types/`: interfaces del dominio.
+- `routes/`: define las rutas.
+- `controllers/`: gestiona las peticiones y respuestas.
+- `services/`: contiene la lógica principal.
+- `config/`: guarda los datos iniciales.
+- `types/`: define los tipos del backend.
 
-## Recursos REST
+Esta separación ayuda a que el código no esté todo mezclado en un solo archivo.
+
+## Endpoints REST
 
 - `GET /api/v1/destinations`: devuelve todos los destinos.
-- `GET /api/v1/destinations/:id`: devuelve un destino.
-- `GET /api/v1/reservations`: devuelve reservas.
+- `GET /api/v1/destinations/:id`: devuelve un destino concreto.
+- `GET /api/v1/reservations`: devuelve las reservas.
 - `POST /api/v1/reservations`: crea una reserva.
-- `PATCH /api/v1/reservations/:id`: cambia estado de reserva.
+- `PATCH /api/v1/reservations/:id`: actualiza el estado de una reserva.
 - `DELETE /api/v1/reservations/:id`: elimina una reserva.
 
-## Persistencia
+## Persistencia de datos
 
-Los destinos y reservas viven en memoria en el backend. La UI no usa LocalStorage para estos datos, porque la API es la fuente de verdad. El estado de favoritos vive solo en cliente porque es una preferencia temporal de usuario.
+En este proyecto los datos están en memoria en el backend. Esto significa que no hay base de datos real. Para el objetivo del trabajo es suficiente, porque permite demostrar la conexión entre frontend, API y backend.
+
+Los favoritos y el modo claro/oscuro son preferencias de interfaz. Por eso se gestionan desde el cliente.
 
 ## Flujo de datos
 
 ```mermaid
 flowchart LR
-  UI["React pages/components"] --> Hook["Custom hooks"]
-  Hook --> Client["Typed API client"]
-  Client --> API["Express /api/v1"]
-  API --> Controller["Controllers"]
-  Controller --> Service["Services"]
-  Service --> Data["In-memory data"]
+  UI["Interfaz React"] --> Hook["Hooks"]
+  Hook --> Client["Cliente API tipado"]
+  Client --> API["API Express"]
+  API --> Controller["Controladores"]
+  Controller --> Service["Servicios"]
+  Service --> Data["Datos en memoria"]
   Data --> Service --> Controller --> API --> Client --> Hook --> UI
 ```

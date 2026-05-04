@@ -4,40 +4,54 @@
 
 Corvus Viajes.
 
-## Problema que resuelve
+## Descripción
 
-Muchas agencias pequenas reciben peticiones por correo o mensajes sueltos, lo que hace dificil ordenar destinos, preferencias y estado de cada solicitud. Corvus Viajes centraliza la primera fase: el cliente explora destinos, calcula una estimacion y envia una solicitud de reserva.
+Corvus Viajes es una aplicación web para una agencia de viajes moderna. La web permite consultar destinos, ver información básica de cada propuesta y enviar una solicitud de reserva.
+
+La idea no es vender directamente un viaje cerrado, sino facilitar el primer contacto entre el cliente y la agencia. El usuario puede ver opciones, hacerse una idea del precio y enviar sus datos para que la agencia prepare una propuesta más personalizada.
+
+## Problema que intenta resolver
+
+Muchas agencias pequeñas gestionan las primeras solicitudes por correo, teléfono o mensajes sueltos. Eso puede hacer que se pierda información o que sea difícil organizar las preferencias de cada cliente.
+
+Con esta aplicación, la agencia tiene un punto de entrada más ordenado: destinos, formulario, datos del cliente y estado de las reservas.
 
 ## Usuario objetivo
 
-Personas que quieren organizar un viaje cuidado pero no desean construir todo desde cero. Tambien sirve para una agencia boutique que necesita una herramienta sencilla para mostrar propuestas y recoger solicitudes.
+El usuario principal sería una persona que quiere organizar un viaje cuidado, pero prefiere recibir ayuda de una agencia en vez de hacerlo todo por su cuenta.
+
+También está pensada para una agencia boutique que quiere enseñar sus propuestas de forma más profesional y recoger solicitudes desde una web.
 
 ## Funcionalidades principales
 
-- Pagina de inicio con identidad de la empresa.
-- Catalogo de destinos desde API.
-- Busqueda por destino, pais o etiquetas.
-- Favoritos usando Context API.
-- Formulario de reserva controlado.
-- Validacion de campos.
-- Listado de reservas creadas.
-- Cancelacion de reservas.
-- Cliente de API tipado en TypeScript.
-- Backend Express con arquitectura por capas.
+- Página de inicio con presentación de la marca.
+- Catálogo de destinos.
+- Búsqueda por país, nombre o etiquetas.
+- Tarjetas de destino con imagen, precio y valoración.
+- Sistema de favoritos.
+- Formulario de solicitud de reserva.
+- Validación de campos básicos.
+- Listado de solicitudes recientes.
+- Cancelación de reservas.
+- API propia con Express.
+- Cliente de API tipado en el frontend.
 
 ## Funcionalidades opcionales
 
-- Autenticacion de administradores.
-- Panel privado para confirmar reservas.
-- Drag and drop para ordenar itinerarios.
-- Tests con React Testing Library.
-- Swagger/OpenAPI para la API.
-- Persistencia real en base de datos.
+- Panel de administración para gestionar destinos.
+- Inicio de sesión para clientes o administradores.
+- Base de datos real.
+- Filtros más avanzados por precio, duración o tipo de viaje.
+- Drag and drop para organizar itinerarios.
+- Tests automáticos.
+- Documentación de API con Swagger/OpenAPI.
 
 ## Mejoras futuras
 
-La mejora mas importante seria conectar una base de datos, por ejemplo PostgreSQL o MongoDB. Tambien se podria anadir login, pagos, filtros avanzados y un panel de administracion para modificar destinos sin tocar codigo.
+Como mejora futura añadiría una base de datos para que las reservas no se pierdan al reiniciar el servidor. También sería interesante añadir un panel privado para que la agencia pueda confirmar reservas, modificar destinos y consultar clientes.
 
-## Repositorio GitHub
+Otra mejora posible sería añadir pagos, aunque para este trabajo he preferido centrarme en la parte de catálogo, solicitud y conexión frontend-backend.
 
-Pendiente de crear y enlazar cuando el proyecto se suba a GitHub.
+## Repositorio
+
+Repositorio GitHub: [Corvus-Viajes](https://github.com/Darius-Ciocan/Corvus-Viajes)

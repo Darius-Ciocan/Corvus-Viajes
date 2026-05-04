@@ -2,28 +2,38 @@
 
 ## AppShell
 
-Define la estructura comun: cabecera, logo, navegacion desktop y menu movil. Usa `NavLink` para marcar la ruta activa.
+`AppShell` es el componente que contiene la estructura general de la aplicación. Incluye el logo, la navegación, el menú móvil y el botón para cambiar entre modo claro y oscuro.
+
+También se encarga de mostrar el fondo de partículas detrás del contenido.
 
 ## DestinationCard
 
-Recibe una prop tipada `destination: Destination`. Muestra imagen, pais, nombre, etiquetas, rating y precio. Tambien permite marcar favorito y seleccionar el destino para reservar.
+`DestinationCard` muestra la información principal de un destino: imagen, país, nombre, resumen, etiquetas, valoración y precio.
+
+También permite marcar un destino como favorito y seleccionar ese destino para ir al formulario de reserva. Las props están tipadas con TypeScript usando el tipo `Destination`.
 
 ## ReservationForm
 
-Formulario controlado. Cada input tiene su propio estado local. Valida datos basicos antes de enviar y llama a una funcion `onSubmit` tipada.
+`ReservationForm` es un formulario controlado. Guarda en estado los datos que introduce el usuario: destino, nombre, email, número de viajeros, fecha y preferencias.
+
+Antes de enviar, valida algunos campos básicos. Si todo está correcto, llama a la función que crea la reserva en la API.
 
 ## ReservationList
 
-Recibe reservas y una funcion para cancelar. Renderiza el estado de cada solicitud y muestra un estado vacio si no hay datos.
+`ReservationList` muestra las reservas que devuelve la API. Si no hay reservas, enseña un mensaje indicando que todavía no hay solicitudes.
+
+También permite cancelar una reserva, cambiando su estado desde la API.
 
 ## LoadingState y ErrorState
 
-Componentes reutilizables para representar carga y error. Se usan en paginas que dependen de la API.
+Estos componentes se usan para no repetir código cuando una petición está cargando o cuando ocurre un error. Así la interfaz no se queda en blanco mientras espera la respuesta.
 
 ## ParticleBackground
 
-Renderiza particulas decorativas en segundo plano. No bloquea la interaccion porque usa `pointer-events: none` y respeta `prefers-reduced-motion` desde CSS.
+`ParticleBackground` añade partículas decorativas al fondo. Es solo un detalle visual, no afecta a la interacción porque usa `pointer-events: none`.
 
-## Composicion
+También se ha tenido en cuenta `prefers-reduced-motion` para reducir las animaciones si el usuario lo tiene configurado en su sistema.
 
-Las paginas no contienen toda la logica visual. Componen componentes pequenos y pasan datos por props. Esto hace que las piezas sean reutilizables y mas faciles de probar.
+## Composición
+
+Las páginas principales combinan componentes más pequeños. Esto hace que el código sea más fácil de leer y evita que una página tenga demasiada lógica junta.

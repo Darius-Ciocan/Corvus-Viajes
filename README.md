@@ -1,33 +1,41 @@
 # Corvus Viajes
 
-Aplicacion fullstack para una empresa ficticia de viajes. El frontend esta construido con React, TypeScript, Tailwind CSS y React Router. El backend usa Node.js y Express con arquitectura por capas.
+Corvus Viajes es una aplicación fullstack para una agencia de viajes ficticia. La idea es que una persona pueda consultar destinos, marcar favoritos y enviar una solicitud de reserva desde una interfaz sencilla y visual.
 
-## Funcionalidades
+El proyecto está hecho con React, TypeScript, Tailwind CSS y React Router en el frontend. En el backend se usa Node.js con Express, organizado por capas para separar rutas, controladores, servicios y datos.
 
-- Catalogo de destinos cargado desde la API.
-- Busqueda de destinos por nombre, pais o etiqueta.
-- Formulario controlado para crear solicitudes de reserva.
-- Validacion en frontend y backend.
-- Listado de reservas con opcion de cancelacion.
-- Context API para destino seleccionado y favoritos.
-- Boton claro/oscuro con preferencia persistente.
-- Fondo de particulas y animaciones de interaccion.
-- Hooks reutilizables para destinos, reservas y presupuesto.
-- Estados de red: loading, data y error.
-- Lazy loading de paginas con `React.lazy`.
+## Funcionalidades principales
 
-## Scripts
+- Catálogo de destinos cargado desde la API.
+- Búsqueda por nombre, país o etiquetas.
+- Formulario controlado para solicitar una reserva.
+- Validaciones básicas en frontend y backend.
+- Listado de reservas recientes.
+- Opción para cancelar una solicitud.
+- Favoritos y destino seleccionado usando Context API.
+- Modo claro/oscuro con preferencia guardada.
+- Fondo de partículas y pequeñas animaciones de interacción.
+- Cliente de API tipado con TypeScript.
+- Estados de carga, error y datos cargados.
+- Carga diferida de páginas con `React.lazy`.
+
+## Cómo ejecutar el proyecto
 
 ```bash
 npm install
 npm run server
 npm run dev
+```
+
+El frontend se abre en `http://localhost:5173` y la API en `http://localhost:4000/api/v1`.
+
+Para comprobar que el proyecto compila:
+
+```bash
 npm run build
 ```
 
-El frontend se ejecuta en `http://localhost:5173` y la API en `http://localhost:4000/api/v1`.
-
-## API
+## Endpoints principales
 
 - `GET /api/v1/health`
 - `GET /api/v1/destinations`
@@ -37,12 +45,13 @@ El frontend se ejecuta en `http://localhost:5173` y la API en `http://localhost:
 - `PATCH /api/v1/reservations/:id`
 - `DELETE /api/v1/reservations/:id`
 
-## Trello y despliegue
+## Enlaces
 
-- Tablero Trello: pendiente de crear manualmente y pegar aqui.
-- Frontend Vercel: [Corvus Viajes](https://corvus-viajes.vercel.app)
-- API Vercel: [Corvus Viajes](https://corvus-viajes.vercel.app/api/v1/health)
+- Web desplegada: [Corvus Viajes](https://corvus-viajes.vercel.app)
+- API desplegada: [Corvus Viajes](https://corvus-viajes.vercel.app/api/v1/health)
+- Repositorio GitHub: [Corvus-Viajes](https://github.com/Darius-Ciocan/Corvus-Viajes)
+- Tablero de Trello: pendiente de añadir cuando esté terminado.
 
-## Documentacion
+## Documentación
 
-La carpeta `docs/` incluye investigacion, idea, gestion del proyecto, arquitectura, componentes, hooks, contexto, rutas, formularios, API, cliente tipado, testing, despliegue y retrospectiva.
+La carpeta `docs/` contiene la investigación y la explicación del proceso: idea del proyecto, organización, arquitectura, componentes, hooks, contexto, rutas, formularios, API, despliegue, pruebas y retrospectiva final.

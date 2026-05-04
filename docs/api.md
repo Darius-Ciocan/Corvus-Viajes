@@ -1,12 +1,12 @@
-# Documentacion de API
+# Documentación de la API
 
 Base local: `http://localhost:4000/api/v1`
 
-## Health
+## Comprobar estado
 
 `GET /health`
 
-Respuesta `200`:
+Respuesta:
 
 ```json
 {
@@ -15,25 +15,29 @@ Respuesta `200`:
 }
 ```
 
+Sirve para comprobar que el backend está funcionando.
+
 ## Destinos
 
-`GET /destinations`
+### `GET /destinations`
 
-Devuelve `200` con un array de destinos.
+Devuelve la lista completa de destinos.
 
-`GET /destinations/:id`
+### `GET /destinations/:id`
 
-Devuelve `200` con un destino o `404` si no existe.
+Devuelve un destino concreto. Si el destino no existe, devuelve un error `404`.
 
 ## Reservas
 
-`GET /reservations`
+### `GET /reservations`
 
-Devuelve `200` con un array de reservas.
+Devuelve la lista de reservas.
 
-`POST /reservations`
+### `POST /reservations`
 
-Body:
+Crea una nueva reserva.
+
+Ejemplo de body:
 
 ```json
 {
@@ -42,15 +46,17 @@ Body:
   "email": "laura@example.com",
   "travelers": 2,
   "startDate": "2026-07-15",
-  "notes": "Hoteles centricos"
+  "notes": "Hoteles céntricos"
 }
 ```
 
-Respuesta `201` con la reserva creada. Si faltan datos devuelve `400`.
+Si los datos son correctos, devuelve `201` con la reserva creada. Si falta algún campo importante, devuelve `400`.
 
-`PATCH /reservations/:id`
+### `PATCH /reservations/:id`
 
-Body:
+Actualiza el estado de una reserva.
+
+Ejemplo:
 
 ```json
 {
@@ -58,8 +64,8 @@ Body:
 }
 ```
 
-Respuesta `200` con la reserva actualizada, `400` si el estado no es valido o `404` si no existe.
+Puede devolver `200`, `400` si el estado no es válido o `404` si la reserva no existe.
 
-`DELETE /reservations/:id`
+### `DELETE /reservations/:id`
 
-Respuesta `200` con mensaje de confirmacion o `404`.
+Elimina una reserva. Devuelve `200` si se elimina correctamente o `404` si no existe.

@@ -2,24 +2,30 @@
 
 ## useState
 
-Se usa para guardar datos que cambian en la interfaz: busqueda de destinos, campos del formulario, mensajes, loading, error y datos recibidos.
+`useState` se usa para guardar información que cambia en la interfaz. Por ejemplo, los campos del formulario, el texto de búsqueda, los mensajes, los datos cargados y los estados de carga.
 
 ## useEffect
 
-Se usa en `useDestinations` y `useReservations` para cargar datos desde la API cuando el componente se monta.
+`useEffect` se usa para ejecutar acciones cuando el componente se monta. En este proyecto se utiliza para cargar destinos y reservas desde la API.
 
 ## useMemo
 
-Se usa para evitar recalcular filtros y presupuestos si no cambian sus dependencias. Por ejemplo, el presupuesto estimado depende del destino elegido y del numero de viajeros.
+`useMemo` se usa para evitar cálculos innecesarios. Por ejemplo, el filtro de destinos no necesita recalcularse si no cambia la búsqueda o la lista de destinos.
+
+También se usa para calcular el presupuesto estimado según el destino elegido y el número de viajeros.
 
 ## useCallback
 
-Se usa en `useReservations` y `BookingContext` para mantener funciones estables, como refrescar reservas, crear una reserva o alternar favoritos.
+`useCallback` se usa para mantener estables algunas funciones, como crear una reserva, cancelar una reserva o cambiar favoritos. Esto ayuda cuando esas funciones se pasan como props a otros componentes.
 
-## Custom hooks
+## Hooks personalizados
 
-`useDestinations` encapsula la carga de destinos y devuelve `destinations`, `isLoading` y `error`.
+Los hooks personalizados creados son:
 
-`useReservations` gestiona la lista de reservas, creacion, cancelacion y recarga.
+- `useDestinations`: carga destinos desde la API.
+- `useReservations`: carga, crea y cancela reservas.
+- `useTripBudget`: calcula el presupuesto estimado.
+- `useBookingContext`: facilita el uso del contexto de reservas/favoritos.
+- `useTheme`: facilita el uso del contexto de tema.
 
-`useTripBudget` calcula el presupuesto base, la comision de servicio y el total.
+Separar esta lógica en hooks hace que las páginas sean más limpias y fáciles de entender.

@@ -1,19 +1,21 @@
 # Cliente de API tipado
 
-El frontend usa `src/api/client.ts` como unica capa de red. Esto evita repartir llamadas `fetch` por todos los componentes.
+El archivo `src/api/client.ts` centraliza las llamadas al backend. En vez de usar `fetch` directamente en cada componente, las peticiones se hacen desde este cliente.
 
-## Contratos
+Esto hace que el código sea más ordenado y que los componentes no tengan que saber todos los detalles de la API.
 
-Los tipos principales estan en `src/types/travel.ts`:
+## Tipos usados
+
+Los tipos principales están en `src/types/travel.ts`:
 
 - `Destination`
 - `Reservation`
 - `ReservationInput`
 - `ApiErrorResponse`
 
-Estos contratos coinciden con los datos que devuelve Express.
+Estos tipos ayudan a que TypeScript avise si se usa mal algún dato.
 
-## Funciones disponibles
+## Funciones del cliente
 
 - `getDestinations()`
 - `getDestination(id)`
@@ -24,10 +26,10 @@ Estos contratos coinciden con los datos que devuelve Express.
 
 ## Estados de red
 
-Los hooks gestionan:
+La interfaz contempla tres estados:
 
-- Loading: mientras se espera la respuesta.
-- Data: cuando la API devuelve datos.
-- Error: cuando la peticion falla.
+- Cargando: cuando la petición todavía no ha terminado.
+- Éxito: cuando los datos han llegado bien.
+- Error: cuando la API responde con un problema o la petición falla.
 
-La UI muestra `LoadingState`, contenido real o `ErrorState` segun corresponda.
+Estos estados se muestran en la UI con componentes como `LoadingState` y `ErrorState`.

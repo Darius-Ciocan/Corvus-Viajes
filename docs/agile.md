@@ -2,35 +2,38 @@
 
 ## Agile
 
-Agile es una forma de desarrollar software basada en avanzar por partes pequenas, recibir feedback pronto y adaptar el plan segun lo que se aprende. Su objetivo principal es reducir el riesgo de construir algo que no sirve al usuario. En lugar de esperar meses para entregar todo, el equipo crea versiones utiles, las revisa y mejora continuamente.
+Agile es una forma de trabajar en proyectos de software en la que se intenta avanzar poco a poco, revisar lo que se está haciendo y corregir el rumbo si hace falta. En vez de planificarlo todo al detalle desde el principio y entregar el producto al final, se hacen pequeñas entregas que se pueden probar y mejorar.
+
+El objetivo principal de Agile es crear software útil para el usuario y reducir el riesgo de construir algo que luego no encaje con lo que se necesitaba. Para eso se da mucha importancia al feedback, a la comunicación y a la adaptación.
 
 ## Scrum
 
-Scrum es una metodologia Agile organizada en ciclos de trabajo llamados sprints. Un sprint suele durar entre una y cuatro semanas y termina con una revision del resultado.
+Scrum es una metodología basada en Agile. Organiza el trabajo en periodos cortos llamados sprints, que normalmente duran entre una y cuatro semanas. Al final de cada sprint se revisa qué se ha conseguido y qué se puede mejorar.
 
-Conceptos principales:
+Los conceptos principales de Scrum son:
 
-- Product Owner: persona que prioriza el producto y decide que aporta mas valor.
-- Scrum Master: ayuda al equipo a seguir Scrum y eliminar bloqueos.
-- Equipo de desarrollo: construye el producto.
-- Product Backlog: lista ordenada de funcionalidades, errores y mejoras.
-- Sprint Backlog: tareas elegidas para el sprint actual.
-- Daily: reunion breve para sincronizar avances y problemas.
-- Review: demostracion del trabajo terminado.
-- Retrospective: reflexion sobre como mejorar el proceso.
+- Product Owner: persona que decide qué funcionalidades tienen más prioridad.
+- Scrum Master: ayuda a que el equipo trabaje siguiendo Scrum y elimina bloqueos.
+- Equipo de desarrollo: se encarga de construir el producto.
+- Product Backlog: lista general de funcionalidades, mejoras y errores.
+- Sprint Backlog: tareas elegidas para trabajar durante el sprint actual.
+- Sprint Review: revisión del trabajo terminado.
+- Retrospectiva: reunión para pensar qué ha ido bien y qué se puede mejorar.
 
 ## Kanban
 
-Kanban organiza el trabajo con un tablero visual. Las tareas se colocan en columnas como Backlog, Todo, In Progress, Review y Done. La idea es ver el estado del proyecto de un vistazo y limitar el trabajo en curso para no abrir demasiadas tareas a la vez.
+Kanban es una forma visual de organizar tareas. Normalmente se usa un tablero con columnas como Backlog, Todo, In Progress, Review y Done. Cada tarea se representa con una tarjeta y se va moviendo según su estado.
+
+Su ventaja es que permite ver rápidamente qué queda por hacer, qué está en progreso y qué ya está terminado. También ayuda a no empezar demasiadas tareas a la vez.
 
 ## Diferencias entre Scrum y Kanban
 
-Scrum trabaja con sprints cerrados, roles definidos y ceremonias concretas. Kanban es mas flexible: no exige sprints ni roles especificos, sino un flujo continuo de tareas.
+Scrum está más estructurado. Tiene roles definidos, sprints y reuniones concretas. Kanban es más flexible y se centra sobre todo en visualizar el flujo de trabajo.
 
-Scrum ayuda cuando el proyecto necesita ritmo, planificacion y entregas regulares. Kanban funciona bien cuando llegan tareas de manera variable o cuando interesa mejorar el flujo sin cambiar toda la organizacion.
+Scrum suele funcionar mejor cuando hay entregas marcadas y se quiere trabajar por fases. Kanban es útil cuando las tareas van entrando de forma continua o cuando se quiere organizar el trabajo sin una estructura tan cerrada.
 
-## Cuando usar cada una
+## Cuándo usaría cada una
 
-Usaria Scrum en un proyecto universitario o profesional con fechas claras, equipo definido y varias entregas parciales. Permite dividir el trabajo en bloques y revisar cada avance.
+Usaría Scrum en proyectos con equipo, fechas de entrega y funcionalidades que se pueden repartir por sprints. Para un proyecto de clase también puede ser útil si se divide el trabajo por semanas.
 
-Usaria Kanban para mantenimiento, soporte, mejoras pequenas o proyectos personales donde las tareas cambian con frecuencia. Tambien es util para visualizar el progreso aunque no se aplique una metodologia completa.
+Usaría Kanban para organizar tareas de manera más sencilla, por ejemplo en un proyecto individual, en mantenimiento o cuando las tareas van cambiando. En este proyecto he usado una organización tipo Kanban porque ayuda a ver el avance de cada parte.

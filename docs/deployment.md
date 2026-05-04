@@ -1,27 +1,40 @@
 # Despliegue
 
-## Frontend
+## Plataforma elegida
 
-El frontend se puede desplegar en Vercel con:
+El proyecto está desplegado en Vercel, porque funciona bien con proyectos de Vite y permite publicar el frontend de forma sencilla.
+
+## Proceso seguido
+
+Primero comprobé que el proyecto compilaba correctamente:
 
 ```bash
 npm run build
-npx vercel deploy
 ```
 
-## Backend
+Después se desplegó con Vercel:
 
-El backend Express esta en `server/src`. Para Vercel se creo `api/[...path].ts`, que reutiliza la misma app de Express como funcion serverless catch-all.
+```bash
+npx vercel deploy --prod
+```
+
+## Backend en Vercel
+
+El backend principal está en `server/src`, pero para Vercel se añadieron endpoints dentro de la carpeta `api/`. Así se pueden publicar las rutas de la API junto al frontend.
+
+La aplicación usa `/api/v1` como base de la API, por lo que en producción frontend y backend quedan bajo el mismo dominio.
 
 ## Variables de entorno
 
-En local el cliente usa el proxy de Vite para `/api`. Si frontend y API se despliegan en el mismo proyecto de Vercel, puede usarse `/api/v1`. Si la API esta en otro dominio, se recomienda definir:
+En local, Vite usa un proxy para enviar `/api` al backend de Express. Si en el futuro la API estuviera en otro dominio, se podría usar una variable:
 
 ```text
 VITE_API_URL=https://tu-api.com/api/v1
 ```
 
-## URLs
+En este caso no ha hecho falta porque la API está en el mismo proyecto de Vercel.
+
+## URLs finales
 
 - Frontend: [Corvus Viajes](https://corvus-viajes.vercel.app)
 - API: [Corvus Viajes](https://corvus-viajes.vercel.app/api/v1/health)

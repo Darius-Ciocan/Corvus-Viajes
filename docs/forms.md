@@ -1,20 +1,34 @@
-# Formularios e interaccion
+# Formularios e interacción
 
 ## Formulario de reserva
 
-El formulario de `ReservationForm` es controlado. Los valores de destino, nombre, email, viajeros, fecha y notas se guardan en estado de React.
+El formulario principal está en el componente `ReservationForm`. Es un formulario controlado, porque cada campo está conectado a un estado de React.
 
-## Validacion
+Los campos son:
 
-Antes de enviar se comprueba que:
+- Destino.
+- Nombre completo.
+- Email.
+- Número de viajeros.
+- Fecha de salida.
+- Preferencias del viaje.
 
-- Exista un destino seleccionado.
-- El nombre tenga al menos 3 caracteres.
-- El email contenga `@`.
-- El numero de viajeros sea valido.
+## Validación
 
-El backend repite la validacion para no confiar solo en el cliente.
+Antes de enviar se comprueban varias cosas:
 
-## Mensajes
+- Que se haya elegido un destino.
+- Que el nombre tenga una longitud mínima.
+- Que el email tenga formato básico.
+- Que el número de viajeros esté dentro de un rango válido.
+- Que exista una fecha de salida.
 
-La UI muestra confirmacion cuando se crea una reserva y muestra error si la API rechaza la peticion.
+El backend también valida los datos. Esto es importante porque no se debe confiar solo en la validación del navegador.
+
+## Mensajes al usuario
+
+Si la reserva se crea correctamente, se muestra un mensaje de confirmación. Si ocurre un error, se enseña un mensaje para que el usuario sepa que debe revisar los datos o intentarlo de nuevo.
+
+## Interacciones visuales
+
+Los botones, tarjetas e inputs tienen pequeñas animaciones para que la web se sienta más fluida. También hay un modo claro/oscuro que el usuario puede cambiar desde la cabecera.

@@ -1,36 +1,49 @@
-# Organizacion del proyecto
+# Organización del proyecto
 
-## Metodologia usada
+## Metodología usada
 
-Para este proyecto se combina Agile con un tablero Kanban. Agile aporta la idea de construir por iteraciones y revisar el resultado. Kanban permite visualizar el estado real de cada funcionalidad.
+Para organizar el trabajo he seguido una idea parecida a Kanban. Me parece adecuada para este proyecto porque permite separar las tareas por estado y ver qué partes están pendientes, en desarrollo o terminadas.
+
+También he aplicado algunas ideas de Agile, sobre todo avanzar por partes pequeñas: primero preparar el proyecto, después crear la estructura, luego conectar la API y finalmente mejorar diseño, documentación y despliegue.
 
 ## Columnas del tablero
 
-- Backlog: ideas y funcionalidades pendientes de concretar.
+Las columnas pensadas para el tablero son:
+
+- Backlog: ideas o tareas que todavía no se van a hacer.
 - Todo: tareas preparadas para empezar.
-- In Progress: tareas en desarrollo.
-- Review: tareas terminadas que necesitan revision.
+- In Progress: tareas en las que se está trabajando.
+- Review: tareas terminadas que necesitan revisión.
 - Done: tareas completadas.
 
-## Tarjetas propuestas
+## Tarjetas principales
 
-- Configurar proyecto Vite + React + TypeScript.
-- Instalar y configurar Tailwind CSS.
-- Crear rutas principales.
-- Crear catalogo de destinos.
-- Implementar backend Express.
+- Crear proyecto con Vite, React y TypeScript.
+- Instalar Tailwind CSS.
+- Configurar React Router.
+- Crear estructura de carpetas.
+- Diseñar la idea de Corvus Viajes.
+- Crear catálogo de destinos.
+- Crear backend con Express.
 - Crear endpoints REST.
 - Crear cliente de API tipado.
 - Crear formulario de reserva.
-- Gestionar favoritos con Context API.
-- Documentar componentes.
-- Probar responsive y errores de consola.
-- Preparar despliegue en Vercel.
+- Añadir Context API para favoritos y tema.
+- Revisar responsive.
+- Desplegar en Vercel.
+- Completar documentación.
 
-## Subtareas tecnicas
+## Subtareas técnicas
 
-Cada tarjeta se divide en subtareas como crear tipos, crear componente, conectar API, manejar loading/error, revisar responsive y documentar la decision tomada.
+Cada funcionalidad se puede dividir en pasos más pequeños. Por ejemplo, para el formulario de reserva:
 
-## Enlace del tablero
+- Crear tipos de datos.
+- Crear estados del formulario.
+- Validar campos.
+- Enviar datos a la API.
+- Mostrar mensaje de éxito o error.
+- Probar manualmente el flujo.
 
-Pendiente de pegar tras crear el tablero en Trello.
+## Trello
+
+El tablero de Trello queda pendiente de añadir al README cuando esté terminado. La estructura propuesta sería la de las columnas anteriores.

@@ -1,21 +1,30 @@
 # Context API
 
-## Uso en el proyecto
+## Por qué se usa Context
 
-Se creo `BookingContext` para compartir el destino seleccionado y la lista de favoritos. Estos datos pueden ser usados por tarjetas, formulario y futuras paginas sin pasar props por muchos niveles.
+Context API sirve para compartir información entre componentes sin tener que pasar props por muchos niveles. En este proyecto se usa para dos casos concretos: la selección/favoritos de destinos y el tema visual.
 
-Tambien se creo `ThemeContext` para compartir el modo visual claro/oscuro. El provider guarda la preferencia en `localStorage` y aplica la clase `dark` al documento.
+## BookingContext
 
-## Provider
+`BookingContext` guarda:
 
-`BookingProvider` envuelve la aplicacion en `main.tsx`. Internamente usa `useState`, `useCallback` y `useMemo`.
+- El destino seleccionado.
+- La lista de destinos favoritos.
+- Una función para cambiar el destino seleccionado.
+- Una función para añadir o quitar favoritos.
 
-`ThemeProvider` tambien envuelve la aplicacion para que el boton de tema este disponible desde el layout principal.
+Esto permite que una tarjeta de destino pueda seleccionar un viaje y que el formulario lo reciba sin tener que pasar esa información manualmente por todas las páginas.
 
-## Consumo
+## ThemeContext
 
-Los componentes usan `useBookingContext()`. Si el hook se usa fuera del provider, lanza un error para detectar el problema durante desarrollo.
+`ThemeContext` guarda el tema actual, claro u oscuro, y una función para cambiarlo.
 
-## Cuando es util
+La preferencia se guarda en `localStorage`, así que si el usuario vuelve a abrir la web se mantiene el último modo elegido.
 
-Context API es util cuando varios componentes separados necesitan leer o modificar el mismo estado. No sustituye siempre a props ni a una base de datos; se debe usar para estado global de UI o preferencias compartidas.
+## Providers
+
+En `main.tsx` la aplicación está envuelta por `ThemeProvider` y `BookingProvider`. De esta forma, cualquier componente que lo necesite puede acceder a esos datos.
+
+## Cuándo es útil
+
+Context API es útil para estados globales de interfaz. No lo usaría para todo, porque si se abusa puede complicar el proyecto, pero en este caso encaja bien para favoritos, destino seleccionado y tema.
