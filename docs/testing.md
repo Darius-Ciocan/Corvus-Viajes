@@ -25,6 +25,8 @@ Pruebas manuales realizadas:
 - Cambiar entre modo claro y oscuro.
 - Revisar que las imágenes cargan correctamente.
 - Comprobar la API con `/api/v1/health`.
+- Probar la estructura de SQL en `sql/schema.sql`.
+- Revisar que los endpoints de productos devuelven un error controlado si no existe `DATABASE_URL`.
 - Revisar la web en producción después del despliegue.
 
 ## Resultado

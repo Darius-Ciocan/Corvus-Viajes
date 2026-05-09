@@ -69,3 +69,32 @@ Puede devolver `200`, `400` si el estado no es válido o `404` si la reserva no 
 ### `DELETE /reservations/:id`
 
 Elimina una reserva. Devuelve `200` si se elimina correctamente o `404` si no existe.
+
+## Categorías
+
+### `GET /categories`
+
+Devuelve las categorías guardadas en PostgreSQL.
+
+## Productos
+
+### `GET /products`
+
+Devuelve los productos con su categoría usando un `INNER JOIN`.
+
+### `POST /products`
+
+Crea un producto nuevo usando una consulta parametrizada.
+
+Ejemplo de body:
+
+```json
+{
+  "name": "Ruta por Lisboa",
+  "price": 690,
+  "stock": 8,
+  "categoryId": "uuid-de-la-categoria"
+}
+```
+
+Si `DATABASE_URL` no está configurada, estos endpoints devuelven un error indicando que falta la conexión con la base de datos.

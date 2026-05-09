@@ -26,6 +26,8 @@ También me ha servido para dejar la documentación más clara y para comprobar 
 
 ## Qué mejoraría
 
-Si tuviera más tiempo, añadiría una base de datos real para guardar reservas y destinos. También añadiría autenticación para un panel de administración, filtros más completos y tests automáticos.
+Si tuviera más tiempo, conectaría también destinos y reservas a PostgreSQL. En esta fase he conectado el inventario de productos para practicar el modelo relacional, foreign keys y consultas SQL.
 
 Otra mejora sería documentar la API con Swagger/OpenAPI para que los endpoints se puedan consultar de forma más visual.
+
+También sería útil crear migraciones con Drizzle Kit para no ejecutar los scripts SQL manualmente.

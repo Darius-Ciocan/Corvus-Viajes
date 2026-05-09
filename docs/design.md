@@ -57,9 +57,18 @@ Esta separación ayuda a que el código no esté todo mezclado en un solo archiv
 
 ## Persistencia de datos
 
-En este proyecto los datos están en memoria en el backend. Esto significa que no hay base de datos real. Para el objetivo del trabajo es suficiente, porque permite demostrar la conexión entre frontend, API y backend.
+Los destinos y reservas iniciales siguen estando en memoria, porque forman parte de la primera versión de la web. Para la parte de base de datos se ha añadido un inventario real con PostgreSQL en Neon, usando las tablas `categories` y `products`.
 
 Los favoritos y el modo claro/oscuro son preferencias de interfaz. Por eso se gestionan desde el cliente.
+
+## Base de datos relacional
+
+El inventario usa PostgreSQL y está definido en `sql/schema.sql`. La relación principal es:
+
+- Una categoría puede tener muchos productos.
+- Cada producto pertenece a una categoría.
+
+La foreign key `products.category_id` protege la relación para que no se puedan crear productos con categorías inexistentes.
 
 ## Flujo de datos
 
@@ -72,4 +81,15 @@ flowchart LR
   Controller --> Service["Servicios"]
   Service --> Data["Datos en memoria"]
   Data --> Service --> Controller --> API --> Client --> Hook --> UI
+```
+
+Para el inventario, el flujo cambia ligeramente porque los datos vienen de Neon:
+
+```mermaid
+flowchart LR
+  UI["Página Inventario"] --> Client["Cliente API"]
+  Client --> Endpoint["/api/v1/products"]
+  Endpoint --> Service["productService"]
+  Service --> Neon["PostgreSQL en Neon"]
+  Neon --> Service --> Endpoint --> Client --> UI
 ```

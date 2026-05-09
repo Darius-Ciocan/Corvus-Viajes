@@ -24,6 +24,18 @@ El backend principal está en `server/src`, pero para Vercel se añadieron endpo
 
 La aplicación usa `/api/v1` como base de la API, por lo que en producción frontend y backend quedan bajo el mismo dominio.
 
+## Base de datos en producción
+
+Para que el inventario funcione con datos reales hay que crear una base de datos en Neon y añadir la variable `DATABASE_URL` en Vercel.
+
+Pasos:
+
+1. Crear el proyecto en Neon con el nombre `learning-inventory`.
+2. Ejecutar `sql/schema.sql` en la consola SQL de Neon.
+3. Ejecutar `sql/seed.sql` para insertar datos iniciales.
+4. Añadir `DATABASE_URL` en las variables de entorno del proyecto de Vercel.
+5. Redesplegar la aplicación.
+
 ## Variables de entorno
 
 En local, Vite usa un proxy para enviar `/api` al backend de Express. Si en el futuro la API estuviera en otro dominio, se podría usar una variable:
@@ -32,7 +44,7 @@ En local, Vite usa un proxy para enviar `/api` al backend de Express. Si en el f
 VITE_API_URL=https://tu-api.com/api/v1
 ```
 
-En este caso no ha hecho falta porque la API está en el mismo proyecto de Vercel.
+En este caso, para la API no hace falta cambiar la URL porque está en el mismo proyecto de Vercel. Lo importante es configurar `DATABASE_URL` para que los endpoints de productos puedan conectarse a Neon.
 
 ## URLs finales
 

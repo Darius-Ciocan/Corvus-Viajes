@@ -52,6 +52,12 @@ npm run build
 - Repositorio GitHub: [Corvus-Viajes](https://github.com/Darius-Ciocan/Corvus-Viajes)
 - Tablero de Trello: pendiente de añadir cuando esté terminado.
 
+## Base de datos y ORM
+
+El inventario usa PostgreSQL en Neon. Los scripts principales están en `sql/schema.sql` y `sql/seed.sql`.
+
+Además de SQL puro, he añadido un ejemplo con Drizzle ORM en `server/src/db/`. La ventaja de usar un ORM tipado como Drizzle es que el esquema se puede definir en TypeScript y las consultas tienen ayuda de tipos, lo que reduce errores al cambiar columnas o relaciones. Aun así, en este proyecto mantengo SQL parametrizado en los endpoints para practicar bien los fundamentos.
+
 ## Documentación
 
 La carpeta `docs/` contiene la investigación y la explicación del proceso: idea del proyecto, organización, arquitectura, componentes, hooks, contexto, rutas, formularios, API, despliegue, pruebas y retrospectiva final.

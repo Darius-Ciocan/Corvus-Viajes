@@ -1,6 +1,8 @@
 import cors from 'cors'
 import express from 'express'
+import { categoryRouter } from './routes/categoryRoutes.js'
 import { destinationRouter } from './routes/destinationRoutes.js'
+import { productRouter } from './routes/productRoutes.js'
 import { reservationRouter } from './routes/reservationRoutes.js'
 
 export const app = express()
@@ -14,6 +16,8 @@ app.get('/api/v1/health', (_request, response) => {
 
 app.use('/api/v1/destinations', destinationRouter)
 app.use('/api/v1/reservations', reservationRouter)
+app.use('/api/v1/categories', categoryRouter)
+app.use('/api/v1/products', productRouter)
 
 app.use((_request, response) => {
   response.status(404).json({ message: 'Ruta de API no encontrada.' })

@@ -1,3 +1,4 @@
+import type { Category, ProductInput, ProductWithCategory } from '../types/inventory'
 import type { Destination, Reservation, ReservationInput } from '../types/travel'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? '/api/v1'
@@ -36,5 +37,12 @@ export const apiClient = {
   deleteReservation: (id: string) =>
     request<{ message: string }>(`/reservations/${id}`, {
       method: 'DELETE',
+    }),
+  getCategories: () => request<Category[]>('/categories'),
+  getProducts: () => request<ProductWithCategory[]>('/products'),
+  createProduct: (payload: ProductInput) =>
+    request<ProductWithCategory>('/products', {
+      method: 'POST',
+      body: JSON.stringify(payload),
     }),
 }
